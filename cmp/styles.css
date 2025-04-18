@@ -1,0 +1,119 @@
+/* تنظیمات عمومی */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #0d1117;
+    color: #fff;
+}
+
+/* هدر */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #161b22;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+}
+
+.navbar a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+.auth-buttons button {
+    background: none;
+    border: 1px solid #58a6ff;
+    color: #58a6ff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-btn {
+    background-color: #238636;
+    border: none;
+    color: #fff;
+}
+
+/* بخش محتوای اصلی */
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+input {
+    padding: 0.8rem;
+    width: 20%;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.copilot-btn {
+    background-color: #8250df;
+    color: #fff;
+}
+
+/* انیمیشن آیکون‌ها */
+.animations {
+    position: relative;
+    height: 200px;
+}
+
+.floating-icon {
+    font-size: 2rem;
+    position: absolute;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.floating-icon:nth-child(1) {
+    left: 20%;
+    animation-delay: 0s;
+}
+.floating-icon:nth-child(2) {
+    left: 50%;
+    animation-delay: 0.5s;
+}
+.floating-icon:nth-child(3) {
+    left: 80%;
+    animation-delay: 1s;
+}

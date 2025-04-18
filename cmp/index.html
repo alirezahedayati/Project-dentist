@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ویرایشگر پایتون</title>
+    <style>
+        body {
+            font-family: Consolas, monospace;
+            background-color: #121212;
+            color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+        .editor-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        textarea {
+            width: 80%;
+            height: 300px;
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+            background-color: #333;
+            color: white;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        pre {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            width: 80%;
+            border-radius: 5px;
+            margin-top: 20px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: Consolas, monospace;
+        }
+        .input-box {
+            background-color: #444;
+            padding: 10px;
+            width: 80%;
+            margin-top: 10px;
+            font-family: Consolas, monospace;
+            color: white;
+            border-radius: 5px;
+            border: 1px solid #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="editor-container">
+    <h1>ویرایشگر پایتون</h1>
+    <textarea id="pythonCode" placeholder="کد پایتون خود را اینجا وارد کنید..."></textarea>
+    <button onclick="runPythonCode()">ران</button>
+    <div id="outputContainer">
+        <pre id="output">خروجی در اینجا نمایش داده می‌شود...</pre>
+    </div>
+    <div id="inputContainer" style="display: none;">
+        <input type="text" id="userInput" class="input-box" placeholder="ورودی خود را وارد کنید...">
+        <button onclick="sendInput()">ارسال ورودی</button>
+    </div>
+</div>
+
+<script>
+    let pythonInputCallback = null; // For handling Python input
+
+    function runPythonCode() {
+        const code = document.getElementById('pythonCode').value;
+        const output = document.getElementById('output');
+        const inputContainer = document.getElementById('inputContainer');
+
+        // Clear previous output
+        output.textContent = 'در حال اجرا...';
+
+        // Send code to backend for execution
+        fetch('http://localhost:5000/execute', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ code: code }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.result) {
+                output.textContent = data.result;
+            } else if (data.inputNeeded) {
+                output.textContent = data.message;
+                inputContainer.style.display = 'block'; // Show input box for user
+                pythonInputCallback = data.inputCallback; // Save the callback
+            } else {
+                output.textContent = 'نتیجه‌ای دریافت نشد';
+            }
+        })
+        .catch(error => {
+            output.textContent = 'خطا در اجرای کد: ' + error.message;
+        });
+    }
+
+    function sendInput() {
+        const userInput = document.getElementById('userInput').value;
+        fetch('http://localhost:5000/send_input', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ input: userInput }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Process the response if input was handled
+            if (data.result) {
+                document.getElementById('output').textContent = data.result;
+            }
+            // Hide input field
+            document.getElementById('inputContainer').style.display = 'none';
+        });
+    }
+</script>
+
+</body>
+</html>
