@@ -1,33 +1,39 @@
-این پروژه یک وبسایت برای معرفی و رزرو نوبت دندانپزشکی می‌باشد. این پروژه با استفاده از تکنولوژی Vue.js و ابزار Vite توسعه داده شده است.
+# Dental Clinic Introduction & Appointment Booking Website
 
-## ویژگی‌ها
+This project is a website for introducing dental services and allowing patients to book appointments online. The project is built using **Vue.js** and **Vite**.
 
-- **رابط کاربری داینامیک**: استفاده از Vue.js برای ایجاد رابط کاربری داینامیک و واکنش‌گرا.
-- **ساختار بهینه و ماژولار**: استفاده از Vite برای ساختاردهی پروژه و بهبود عملکرد توسعه.
-- **طراحی واکنش‌گرا**: استفاده از بوت‌استرپ برای طراحی واکنش‌گرا که در دستگاه‌های مختلف به خوبی نمایش داده می‌شود.
-- **پشتیبانی از زبان فارسی و راست‌چین**: طراحی بهینه برای کاربران فارسی‌زبان و سازگاری با نوشتار راست به چپ (RTL).
-- **گالری خدمات و درمان‌ها**: شامل بخش‌های مختلفی برای معرفی خدمات و درمان‌های ارائه شده.
-- **امکان رزرو نوبت آنلاین**: امکان ثبت نوبت‌های آنلاین برای بیماران.
+## Features
 
-## پیش‌نیازها
+* **Dynamic User Interface**: Built with Vue.js to provide a dynamic and responsive UI.
+* **Optimized & Modular Structure**: Developed using Vite for better project structure and improved development performance.
+* **Responsive Design**: Uses Bootstrap to ensure the layout adapts well to various devices.
+* **Persian & RTL Support**: Fully optimized for Persian users with complete right-to-left (RTL) layout support.
+* **Services & Treatments Gallery**: Includes various sections to present available services and treatments.
+* **Online Appointment Booking**: Allows patients to schedule appointments online.
 
-- Node.js
-- pnpm
+## Prerequisites
 
-## نصب
+* Node.js
+* pnpm
 
-ابتدا وابستگی‌های مورد نیاز را نصب کنید:
+## Installation
+
+Install the required dependencies:
 
 ```bash
 pnpm install
 ```
 
-## اجرای پروژه
+## Run the Project
 
-برای اجرای پروژه در حالت توسعه، دستور زیر را اجرا کنید:
+To run the project in development mode:
 
 ```bash
 pnpm dev
 ```
 
-این دستور پروژه را در حالت توسعه اجرا کرده و وبسایت را روی آدرس محلی (به طور پیش‌فرض `http://localhost:5173`) نمایش می‌دهد.
+This command starts the development server and makes the website available locally (default: `http://localhost:5173`).
+
+Please make sure to check the related PDF file for instructions on running the BackEnd. Any contribution or suggestion for improving this project is greatly appreciated.
+
+---
