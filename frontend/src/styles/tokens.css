@@ -1,0 +1,103 @@
+/* ==========================================================================
+   DentisCare Design System — shared tokens for public site & admin panel
+   ========================================================================== */
+
+:root {
+  /* Brand palette (teal-forward, clinical & trustworthy) */
+  --ds-primary-50:  #eefbf9;
+  --ds-primary-100: #d3f4ef;
+  --ds-primary-200: #a8e9e2;
+  --ds-primary-300: #74d6ce;
+  --ds-primary-400: #41bdb6;
+  --ds-primary-500: #1fa09c;
+  --ds-primary-600: #148280;
+  --ds-primary-700: #136868;
+  --ds-primary-800: #145455;
+  --ds-primary-900: #154647;
+
+  --ds-accent-400: #38bdf8;
+  --ds-accent-500: #0ea5e9;
+  --ds-accent-600: #0284c7;
+
+  --ds-success-50: #ecfdf3;  --ds-success-500: #16a34a; --ds-success-600: #15803d; --ds-success-700: #166534;
+  --ds-warning-50: #fffbeb;  --ds-warning-500: #f59e0b; --ds-warning-600: #d97706; --ds-warning-700: #b45309;
+  --ds-danger-50:  #fef2f2;  --ds-danger-500:  #ef4444; --ds-danger-600:  #dc2626; --ds-danger-700:  #b91c1c;
+  --ds-info-50:    #eff6ff;  --ds-info-500:    #3b82f6; --ds-info-600:    #2563eb; --ds-info-700:    #1d4ed8;
+
+  /* Neutrals */
+  --ds-gray-50:  #f8fafc;
+  --ds-gray-100: #f1f5f9;
+  --ds-gray-200: #e2e8f0;
+  --ds-gray-300: #cbd5e1;
+  --ds-gray-400: #94a3b8;
+  --ds-gray-500: #64748b;
+  --ds-gray-600: #475569;
+  --ds-gray-700: #334155;
+  --ds-gray-800: #1e293b;
+  --ds-gray-900: #0f172a;
+
+  /* Semantic aliases */
+  --ds-bg:            #f6f9fb;
+  --ds-surface:       #ffffff;
+  --ds-border:        var(--ds-gray-200);
+  --ds-text:          var(--ds-gray-800);
+  --ds-text-muted:    var(--ds-gray-500);
+  --ds-heading:       var(--ds-gray-900);
+
+  /* Bootstrap overrides so native components match the system */
+  --bs-primary:       var(--ds-primary-600);
+  --bs-primary-rgb:   20, 130, 128;
+  --bs-link-color:    var(--ds-primary-700);
+  --bs-link-color-rgb: 19, 104, 104;
+  --bs-link-hover-color: var(--ds-primary-500);
+  --bs-link-hover-color-rgb: 31, 160, 156;
+  --bs-body-font-family: 'IRANSansX', 'Segoe UI', Tahoma, sans-serif;
+  --bs-body-color:    var(--ds-text);
+  --bs-body-bg:       var(--ds-bg);
+  --bs-border-radius: 12px;
+  --bs-focus-ring-color: rgba(31, 160, 156, .3);
+
+  /* Typography */
+  --ds-font: 'IRANSansX', 'Segoe UI', Tahoma, sans-serif;
+  --ds-fs-xs: .75rem;
+  --ds-fs-sm: .8125rem;
+  --ds-fs-base: .9375rem;
+  --ds-fs-md: 1.0625rem;
+  --ds-fs-lg: 1.25rem;
+  --ds-fs-xl: 1.5rem;
+  --ds-fs-2xl: 1.875rem;
+  --ds-fs-3xl: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+
+  /* Spacing scale */
+  --ds-sp-1: 4px;  --ds-sp-2: 8px;  --ds-sp-3: 12px; --ds-sp-4: 16px;
+  --ds-sp-5: 24px; --ds-sp-6: 32px; --ds-sp-7: 48px; --ds-sp-8: 64px;
+
+  /* Radii & shadows */
+  --ds-radius-sm: 8px;
+  --ds-radius: 14px;
+  --ds-radius-lg: 20px;
+  --ds-radius-full: 999px;
+
+  --ds-shadow-xs: 0 1px 2px rgba(15, 23, 42, .06);
+  --ds-shadow-sm: 0 2px 8px rgba(15, 23, 42, .06);
+  --ds-shadow: 0 8px 24px -6px rgba(15, 23, 42, .12);
+  --ds-shadow-lg: 0 18px 44px -12px rgba(15, 23, 42, .2);
+  --ds-shadow-brand: 0 10px 28px -8px rgba(20, 130, 128, .45);
+
+  /* Motion */
+  --ds-ease: cubic-bezier(.4, 0, .2, 1);
+  --ds-dur: .25s;
+
+  /* Layout */
+  --ds-container: 1180px;
+  --ds-header-h: 74px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
