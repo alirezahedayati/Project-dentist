@@ -1,0 +1,32 @@
+{
+  "name": "dr-azadeh-mehrdad-nuxt",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev --host 0.0.0.0",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "db:setup": "node --env-file=.env scripts/setup.mjs",
+    "reminders": "node --env-file=.env scripts/reminders.mjs",
+    "test:core": "node --env-file=.env --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "nuxt": "^3.17.5",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "lucide-vue-next": "^0.468.0",
+    "pg": "^8.14.1",
+    "zod": "^3.24.2",
+    "bcryptjs": "^2.4.3",
+    "jalaali-js": "^1.2.8",
+    "date-fns-tz": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.11.11",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jalaali-js": "^1.2.0",
+    "typescript": "^5.8.3"
+  },
+  "engines": {"node": ">=20.11"}
+}
